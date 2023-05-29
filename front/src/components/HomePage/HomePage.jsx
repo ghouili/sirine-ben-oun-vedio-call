@@ -38,10 +38,11 @@ function HomePage() {
     const roomName = roomRef.current.value;
     const userName = userRef.current.value;
 
-    socket.emit("joinRoom", { roomId: roomName, name: userName });
-    navigate(`/${roomName}`);
+    // socket.emit("joinRoom", { roomId: roomName, name: userName });
     // Storing a variable in localStorage
-    localStorage.setItem("userName", userName);
+    localStorage.setItem("name", userName);
+    localStorage.setItem("roomId", roomName);
+    navigate(`/${roomName}`);
     // console.log(roomName);
 
     // if (!roomName || !userName) {
